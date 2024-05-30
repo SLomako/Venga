@@ -1,10 +1,7 @@
 package tests;
 
 import annitations.Layer;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -27,7 +24,7 @@ public class MainTest extends TestBase {
     @Epic("Home Page")
     @Feature("Main Title and Subtitle Verification")
     @Story("Verify main title and subtitle text")
-    @Tag("smok")
+    @Tag("smoke")
     @DisplayName("Verify main title and subtitle text")
     @Tag("major")
     void verifyMainTitleAndSubtitle() {
@@ -49,7 +46,7 @@ public class MainTest extends TestBase {
     @Epic("About Page")
     @Feature("Team Member Verification")
     @Story("Verify presence of Michael Stroev")
-    @Tag("smok")
+    @Tag("smoke")
     @DisplayName("Navigate to About page and verify presence of Michael Stroev")
     @Tag("minor")
     void navigateToAboutPageAndVerifyMichaelStroev() {
