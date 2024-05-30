@@ -8,8 +8,6 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import pages.AboutPage;
 import pages.DownloadPage;
 import pages.HomePage;
@@ -33,14 +31,17 @@ public class MainTest extends TestBase {
     @DisplayName("Verify main title and subtitle text")
     @Tag("major")
     void verifyMainTitleAndSubtitle() {
-        step("Open Home Page", homePage::openPage);
-
-        step("Verify main title text", () -> {
-            homePage.verifyMainTitle("Get in on the future of finance");
+        step("Open Home Page", () -> {
+            homePage
+                    .openPage();
         });
-
+        step("Verify main title text", () -> {
+            homePage
+                    .verifyMainTitle("Get in on the future of finance");
+        });
         step("Verify main subtitle text", () -> {
-            homePage.verifyMainSubtitle("Discover innovative blockchain technologies, invest in crypto, and effortlessly navigate the world of Web3.");
+            homePage
+                    .verifyMainSubtitle("Discover innovative blockchain technologies, invest in crypto, and effortlessly navigate the world of Web3.");
         });
     }
 
@@ -52,11 +53,14 @@ public class MainTest extends TestBase {
     @DisplayName("Navigate to About page and verify presence of Michael Stroev")
     @Tag("minor")
     void navigateToAboutPageAndVerifyMichaelStroev() {
-
-        step("Open Home Page", homePage::openPage);
-
-        step("Click on the About link", homePage::clickAboutLink);
-
+        step("Open Home Page", () -> {
+            homePage
+                    .openPage();
+        });
+        step("Click on the About link", () -> {
+            homePage
+                    .clickAboutLink();
+        });
         step("Scroll to 'Our Team' section and verify presence of Michael Stroev", () -> {
             aboutPage
                     .scrollToOurTeamSection();
@@ -73,17 +77,18 @@ public class MainTest extends TestBase {
     @DisplayName("Navigate to Download page and verify content")
     @Tag("minor")
     void navigateToDownloadPageAndVerifyContent() {
-        HomePage homePage = new HomePage();
-
-        step("Open Home Page", homePage::openPage);
-
-        step("Click on the Download link", homePage::clickDownloadLink);
-
+        step("Open Home Page", () -> {
+            homePage
+                    .openPage();
+        });
+        step("Click on the Download link", () -> {
+            homePage
+                    .clickDownloadLink();
+        });
         step("Verify Download Page header", () -> {
             downloadPage
                     .getHeader().shouldHave(text("APP Coming soon"));
         });
-
         step("Verify Download Page description", () -> {
             downloadPage
                     .getDescription().shouldHave(text("The Venga app is currently in the final stages of development and will be launched soon. Follow us on our social media channels to stay updated on the app's release."));
