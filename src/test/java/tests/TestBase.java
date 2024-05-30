@@ -10,12 +10,19 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.AboutPage;
+import pages.DownloadPage;
+import pages.HomePage;
 
 import java.util.Map;
 
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 public class TestBase {
+
+    HomePage homePage = new HomePage();
+    AboutPage aboutPage = new AboutPage();
+    DownloadPage downloadPage = new DownloadPage();
 
     @BeforeAll
     static void beforeAll() {
