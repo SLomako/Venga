@@ -58,8 +58,10 @@ public class MainTest extends TestBase {
         step("Click on the About link", homePage::clickAboutLink);
 
         step("Scroll to 'Our Team' section and verify presence of Michael Stroev", () -> {
-            aboutPage.scrollToOurTeamSection();
-            aboutPage.findPersonByName("Michael Stroev").shouldHave(text("Michael Stroev"));
+            aboutPage
+                    .scrollToOurTeamSection();
+            aboutPage
+                    .findPersonByName("Michael Stroev").shouldHave(text("Michael Stroev"));
         });
     }
 
@@ -78,11 +80,13 @@ public class MainTest extends TestBase {
         step("Click on the Download link", homePage::clickDownloadLink);
 
         step("Verify Download Page header", () -> {
-            downloadPage.getHeader().shouldHave(text("APP Coming soon"));
+            downloadPage
+                    .getHeader().shouldHave(text("APP Coming soon"));
         });
 
         step("Verify Download Page description", () -> {
-            downloadPage.getDescription().shouldHave(text("The Venga app is currently in the final stages of development and will be launched soon. Follow us on our social media channels to stay updated on the app's release."));
+            downloadPage
+                    .getDescription().shouldHave(text("The Venga app is currently in the final stages of development and will be launched soon. Follow us on our social media channels to stay updated on the app's release."));
         });
     }
 

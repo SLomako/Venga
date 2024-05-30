@@ -17,4 +17,26 @@ public class ManualTest {
         step("2");
         step("3");
     }
+
+    @Manual
+    @Test
+    @DisplayName("Manual Test Example")
+    void manualTestExample2() {
+        step("Open MainPage");
+        step("1");
+        step("2");
+        step("3");
+    }
+
+    @Manual
+    @Test
+    @DisplayName("Manual Test Example")
+    void manualTestExample3() {
+        step("Open MainPage");
+        step("1");
+        step("2");
+        step("3");
+    }
+
+
 }
