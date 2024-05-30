@@ -1,5 +1,10 @@
 package tests;
 
+import annitations.Layer;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -12,7 +17,8 @@ import pages.HomePage;
 import static com.codeborne.selenide.Condition.text;
 import static io.qameta.allure.Allure.step;
 
-@Tag("web")
+@Layer("web")
+@Owner("Lomako")
 public class MainTest extends TestBase {
 
     HomePage homePage = new HomePage();
@@ -20,6 +26,10 @@ public class MainTest extends TestBase {
     DownloadPage downloadPage = new DownloadPage();
 
     @Test
+    @Epic("Home Page")
+    @Feature("Main Title and Subtitle Verification")
+    @Story("Verify main title and subtitle text")
+    @Tag("smok")
     @DisplayName("Verify main title and subtitle text")
     @Tag("major")
     void verifyMainTitleAndSubtitle() {
@@ -35,6 +45,10 @@ public class MainTest extends TestBase {
     }
 
     @Test
+    @Epic("About Page")
+    @Feature("Team Member Verification")
+    @Story("Verify presence of Michael Stroev")
+    @Tag("smok")
     @DisplayName("Navigate to About page and verify presence of Michael Stroev")
     @Tag("minor")
     void navigateToAboutPageAndVerifyMichaelStroev() {
@@ -45,11 +59,15 @@ public class MainTest extends TestBase {
 
         step("Scroll to 'Our Team' section and verify presence of Michael Stroev", () -> {
             aboutPage.scrollToOurTeamSection();
-            aboutPage.findPersonByName("Michael Stroev").shouldHave(text("Michael Stroev"));
+            aboutPage.findPersonByName("Michael Stroev").shouldHave(text("Michael StroevV"));
         });
     }
 
     @Test
+    @Epic("Download Page")
+    @Feature("Content Verification")
+    @Story("Verify content on the Download page")
+    @Tag("regress")
     @DisplayName("Navigate to Download page and verify content")
     @Tag("minor")
     void navigateToDownloadPageAndVerifyContent() {
@@ -68,6 +86,9 @@ public class MainTest extends TestBase {
         });
     }
 
+//    @Epic("About Page")
+//    @Feature("Team Member Verification")
+//    @Story("Verify presence of team members")
 //    @ParameterizedTest
 //    @ValueSource(strings = {"Michael Stroev", "Mikhael Soshchin", "Ana Carolina Oliveira (PhD)", "Barbara Ippolito"})
 //    @DisplayName("Navigate to About page and verify presence of team member")
