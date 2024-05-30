@@ -59,7 +59,7 @@ public class MainTest extends TestBase {
 
         step("Scroll to 'Our Team' section and verify presence of Michael Stroev", () -> {
             aboutPage.scrollToOurTeamSection();
-            aboutPage.findPersonByName("Michael Stroev").shouldHave(text("Michael StroevV"));
+            aboutPage.findPersonByName("Michael Stroev").shouldHave(text("Michael Stroev"));
         });
     }
 
