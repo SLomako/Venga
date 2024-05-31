@@ -22,7 +22,7 @@ public class MainTest extends TestBase {
     @Story("Verify main title and subtitle text")
     @Tag("smoke")
     @DisplayName("Verify main title and subtitle text")
-    @Tag("major")
+    @Tag("regress")
     void verifyMainTitleAndSubtitle() {
         step("Open Home Page", () -> {
             homePage
@@ -42,7 +42,7 @@ public class MainTest extends TestBase {
     @Epic("About Page")
     @Feature("Team Member Verification")
     @Story("Verify presence of Michael Stroev")
-    @Tag("smoke")
+    @Tag("regress")
     @DisplayName("Navigate to About page and verify presence of Michael Stroev")
     @Tag("minor")
     void navigateToAboutPageAndVerifyMichaelStroev() {
@@ -58,7 +58,7 @@ public class MainTest extends TestBase {
             aboutPage
                     .scrollToOurTeamSection();
             aboutPage
-                    .findPersonByName("Michael Stroev").shouldHave(text("Michael Stroev"));
+                    .findPersonByName("Michael Stroev").shouldHave(text("Michael StroevVV"));
         });
     }
 

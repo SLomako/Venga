@@ -57,4 +57,16 @@ public class ManualTest extends TestBase {
 //        });
 //
 //    }
+
+
+    @Test
+    @AllureId("32631")
+    @DisplayName("test 1")
+    @Epic("Download Page")
+    @Owner("allure8")
+    void name() {
+        step("open vengo.con", () -> {
+            homePage.openPage();
+        });
+    }
 }
