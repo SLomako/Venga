@@ -3,15 +3,12 @@ package tests;
 import annitations.Manual;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Epic;
-import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-public class ManualTest extends TestBase{
+public class ManualTest extends TestBase {
 
     @Manual
     @Test
@@ -47,30 +44,16 @@ public class ManualTest extends TestBase{
     @Test
     @DisplayName("Manual Test Example")
     void manualTestExampleThree() {
-        step("", () -> {});
-        step("", () -> {});
-        step("", () -> {});
-        step("", () -> {});
-        step("", () -> {});
-
-    }
-
-    @Test
-    @AllureId("32613")
-    @DisplayName("Manual Test")
-    @Tags({@Tag("smok"), @Tag("regress")})
-    @Epic("Home Page")
-    @Owner("allure8")
-    void name() {
-        step("step 12312");
-        homePage.openPage();
-        step("step 212312321", () -> {
-            step("step 3", () -> {
-                step("sste p");
-                step("erwe");
-                step("ewrw");
-                step("check");
-            });
+        step("", () -> {
         });
+        step("", () -> {
+        });
+        step("", () -> {
+        });
+        step("", () -> {
+        });
+        step("", () -> {
+        });
+
     }
 }
