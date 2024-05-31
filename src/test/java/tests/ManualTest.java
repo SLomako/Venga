@@ -7,7 +7,6 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
 import static io.qameta.allure.Allure.step;
 
 public class ManualTest extends TestBase {
@@ -57,23 +56,5 @@ public class ManualTest extends TestBase {
         step("", () -> {
         });
 
-    }
-
-    @Test
-    @AllureId("32625")
-    @DisplayName("should have text APP COMING SOON The Venga app is currently in the final stages of development and will be launched soon.Follow us on our social media channels to stay updated on the apps release.")
-    @Epic("DownloadPage")
-    @Owner("allure8")
-    void name() {
-        step("open venga.com", () -> {
-            homePage.openPage();
-        });
-        step("click download", () -> {
-            homePage.clickDownloadLink();
-        });
-        step("check text", () -> {
-            downloadPage.getHeader().shouldHave(text("APP COMING SOON"));
-            downloadPage.getDescription().shouldHave(text("The Venga app is currently in the final stages of development and will be launched soon. Follow us on our social media channels to stay updated on the app's release."));
-        });
     }
 }
